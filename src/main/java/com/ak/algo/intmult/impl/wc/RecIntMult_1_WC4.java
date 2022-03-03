@@ -1,18 +1,9 @@
-package com.ak.algo;
+package com.ak.algo.intmult.impl.wc;
 
 import java.math.BigInteger;
 
-public class RecIntMult_1_WC3 {
-    public static void main(String[] args) {
-        RecIntMult_1_WC3 mult  = new RecIntMult_1_WC3();
-        String num1 = "134";
-        String num2 = "5678";
-        BigInteger int1 = new BigInteger(num1);
-        BigInteger int2 = new BigInteger(num2);
+public class RecIntMult_1_WC4 {
 
-        mult.intMult(int1,int2);
-
-    }
 
     public BigInteger intMult(BigInteger int1, BigInteger int2) {
 
@@ -52,7 +43,7 @@ public class RecIntMult_1_WC3 {
            System.out.println("bd_a1b1\t" + bd_a1b1);
 
             BigInteger computedVal_step0 = ac_a0b0.multiply(BigInteger.TEN.pow(exponent));
-            BigInteger computedVal_step1 = (ad_a0b1.add(bc_a1b0)).multiply(BigInteger.TEN.pow(exponent/2));
+            BigInteger computedVal_step1 = (ad_a0b1.add(bc_a1b0)).multiply(BigInteger.TEN.pow( (exponent/2)+ (exponent%2) ));
             BigInteger computedVal_step2 = bd_a1b1;
 
             System.out.println("computedVal_step0" + computedVal_step0);
@@ -82,7 +73,14 @@ public class RecIntMult_1_WC3 {
     }
 
     private BigInteger[] splitNumber( BigInteger val, int splitValue) {
-        BigInteger [] valArray= val.divideAndRemainder(BigInteger.TEN.pow(splitValue));
+        BigInteger divisor = BigInteger.TEN.pow(splitValue);
+        BigInteger [] valArray= val.divideAndRemainder(divisor);
+        /*System.out.println("val\t" + val);
+        System.out.println("divisor\t" + divisor);
+        System.out.println("valArray[0]\t" + valArray[0]);
+        if(val.compareTo(divisor) > 0 && valArray[0].compareTo(BigInteger.ZERO) == 0) {
+            valArray[0] = divisor;
+        }*/
         return valArray;
     }
 

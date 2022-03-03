@@ -1,12 +1,12 @@
-package com.ak.algo;
+package com.ak.algo.intmult.impl.wc;
 
 import java.math.BigInteger;
 
-public class RecIntMult_1_WC2 {
+public class RecIntMult_1_WC3 {
     public static void main(String[] args) {
-        RecIntMult_1_WC2 mult  = new RecIntMult_1_WC2();
-        String num1 = "56";
-        String num2 = "9999";
+        RecIntMult_1_WC3 mult  = new RecIntMult_1_WC3();
+        String num1 = "134";
+        String num2 = "5678";
         BigInteger int1 = new BigInteger(num1);
         BigInteger int2 = new BigInteger(num2);
 
@@ -14,23 +14,27 @@ public class RecIntMult_1_WC2 {
 
     }
 
-    private BigInteger intMult(BigInteger int1, BigInteger int2) {
+    public BigInteger intMult(BigInteger int1, BigInteger int2) {
 
         int int1_digitCount = getNbrOfDigits(int1);
         int int2_digitCount = getNbrOfDigits(int2);
 
+        int nValue = splitValue(int1_digitCount,int2_digitCount);
+
+        int exponent = calculateExponent(int1_digitCount,int2_digitCount);
+
         System.out.println("int1_digitCount\t" + int1_digitCount);
         System.out.println("int2_digitCount\t" + int2_digitCount);
-
-        int exponent = int1_digitCount > int2_digitCount ? int1_digitCount : int2_digitCount;
+        System.out.println("split Value\t" + nValue );
+        System.out.println("Exponent\t" + exponent );
 
         if ((int1_digitCount <= 1) || (int2_digitCount <= 1))  {
             System.out.println("either number has one digit" + int1 + "\t" + int2 );
             return int1.multiply(int2);
         }
         else {
-            BigInteger[] int1_a = splitNumber(int1, int2_digitCount);
-            BigInteger[] int1_b = splitNumber(int2, int2_digitCount);
+            BigInteger[] int1_a = splitNumber(int1, nValue);
+            BigInteger[] int1_b = splitNumber(int2, nValue);
 
             System.out.println(int1_a[0].toString() + "\t" + int1_a[1].toString());
             System.out.println(int1_b[0].toString() + "\t" + int1_b[1].toString());
@@ -44,10 +48,10 @@ public class RecIntMult_1_WC2 {
             BigInteger bc_a1b0 = intMult(int1_a[1],int1_b[0]);
             System.out.println("bc_a1b0\t" + bc_a1b0);
 
-           /* BigInteger bd_a1b1 = intMult(int1_a[1],int1_b[1]);
-            System.out.println("bd_a1b1\t" + bd_a1b1);*/
+           BigInteger bd_a1b1 = intMult(int1_a[1],int1_b[1]);
+           System.out.println("bd_a1b1\t" + bd_a1b1);
 
-            /*BigInteger computedVal_step0 = ac_a0b0.multiply(BigInteger.TEN.pow(exponent));
+            BigInteger computedVal_step0 = ac_a0b0.multiply(BigInteger.TEN.pow(exponent));
             BigInteger computedVal_step1 = (ad_a0b1.add(bc_a1b0)).multiply(BigInteger.TEN.pow(exponent/2));
             BigInteger computedVal_step2 = bd_a1b1;
 
@@ -56,20 +60,29 @@ public class RecIntMult_1_WC2 {
             System.out.println("computedVal_step2" + computedVal_step2);
 
 
-            BigInteger finalComputedVal = computedVal_step0.add(computedVal_step1).add(computedVal_step2);*/
+            BigInteger finalComputedVal = computedVal_step0.add(computedVal_step1).add(computedVal_step2);
 
 
 
-            //System.out.println("Final Computed Value\t" + finalComputedVal);
+            System.out.println("Final Computed Value\t" + finalComputedVal);
+            return finalComputedVal;
 
         }
-
-        return new BigInteger("1");
     }
 
-    private BigInteger[] splitNumber( BigInteger val, int nbrOfDigits) {
-        int split_val = nbrOfDigits/2 + nbrOfDigits%2;
-        BigInteger [] valArray= val.divideAndRemainder(BigInteger.TEN.pow(split_val));
+    private int splitValue( int int1_digitCount, int int2_digitCount ) {
+        int split_val = 0;
+        if(int1_digitCount > int2_digitCount) split_val = int1_digitCount/2 + int1_digitCount%2;
+        else split_val = int2_digitCount/2 + int2_digitCount%2;
+        return split_val;
+    }
+
+    private int calculateExponent(int int1_digitCount, int int2_digitCount) {
+        return int1_digitCount > int2_digitCount ? int1_digitCount : int2_digitCount;
+    }
+
+    private BigInteger[] splitNumber( BigInteger val, int splitValue) {
+        BigInteger [] valArray= val.divideAndRemainder(BigInteger.TEN.pow(splitValue));
         return valArray;
     }
 

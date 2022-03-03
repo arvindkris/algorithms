@@ -1,4 +1,4 @@
-package com.ak.algo;
+package com.ak.algo.mergesort;
 
 import java.util.Arrays;
 

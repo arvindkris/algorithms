@@ -1,5 +1,7 @@
-package com.ak.algo;
+package com.ak.algo.intmult;
 
+import com.ak.algo.intmult.impl.RecIntMult;
+import com.ak.algo.intmult.impl.wc.RecIntMult_1_WCFinal;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,9 +14,9 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class RecIntMult_1_WC5Test {
+class RecIntMultTest {
 
-    private final RecIntMult_1_WC5 wc5_mult = new RecIntMult_1_WC5();
+    private final RecIntMult mult = new RecIntMult();
 
     @BeforeEach
     void setUp() {
@@ -35,17 +37,15 @@ class RecIntMult_1_WC5Test {
                 arguments(new BigInteger("156"), new BigInteger("345"),new BigInteger("53820")),
                 arguments(new BigInteger("56"), new BigInteger("25"),new BigInteger("1400")),
                 arguments(new BigInteger("10000"), new BigInteger("10"),new BigInteger("100000")),
-                arguments(new BigInteger("156"), new BigInteger("12345"),new BigInteger("1925820")),
-                arguments(new BigInteger("1234098761234567"), new BigInteger("1234098761234567"),new BigInteger("1522999752480692809197995677489"))
+                arguments(new BigInteger("156"), new BigInteger("12345"),new BigInteger("1925820"))
         );
     }
 
     @ParameterizedTest
-
     @MethodSource("nbrToMultiply")
     void intMult( BigInteger int1, BigInteger int2 , BigInteger actualResult) {
 
-        BigInteger computedResult = wc5_mult.intMult(int1,int2);
+        BigInteger computedResult = mult.intMult(int1,int2);
         assertThat(computedResult).isEqualByComparingTo(actualResult);
 
     }

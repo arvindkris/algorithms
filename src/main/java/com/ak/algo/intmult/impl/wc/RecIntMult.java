@@ -1,4 +1,4 @@
-package com.ak.algo;
+package com.ak.algo.intmult.impl.wc;
 
 public class RecIntMult {
 

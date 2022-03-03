@@ -1,13 +1,12 @@
-package com.ak.algo;
+package com.ak.algo.mergesort;
 
 import java.util.Arrays;
 
-public class MergeSort_1_WC1 {
+public class MergeSort_1 {
     private void mergeSort( int [] input, int start, int end) {
         System.out.println("Merge SORT \t" + start + "\t" + end);
         if( start < end) {
             int mid = (start + end) /2;
-            System.out.println("Merge SORT  mid\t" + mid);
             mergeSort(input, start, mid);
             mergeSort(input, mid + 1, end);
             merge(input, start,mid,end);
@@ -42,7 +41,7 @@ public class MergeSort_1_WC1 {
 
         System.out.println("before sort\t");
         Arrays.stream(input).forEach(System.out::println);
-        MergeSort_1_WC1 sort = new MergeSort_1_WC1();
+        MergeSort_1 sort = new MergeSort_1();
         sort.mergeSort(input,0,input.length -1);
         System.out.println("after sort\t");
         Arrays.stream(input).forEach(System.out::println);

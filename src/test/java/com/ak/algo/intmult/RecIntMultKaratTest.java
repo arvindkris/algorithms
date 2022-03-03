@@ -1,5 +1,6 @@
-package com.ak.algo;
+package com.ak.algo.intmult;
 
+import com.ak.algo.intmult.impl.RecIntMultKarat;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,15 +13,13 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class RecIntMult_1_WC1KaratFinalTest {
+class RecIntMultKaratTest {
 
-    private final RecIntMult_1_WC1KaratFinal wc1Karat_mult = new RecIntMult_1_WC1KaratFinal();
+    private final RecIntMultKarat karat_mult = new RecIntMultKarat();
 
     @BeforeEach
     void setUp() {
     }
-
-
 
     @AfterEach
     void tearDown() {
@@ -44,10 +43,9 @@ class RecIntMult_1_WC1KaratFinalTest {
     }
 
     @ParameterizedTest
-
     @MethodSource("nbrToMultiply")
     void intMult( BigInteger int1, BigInteger int2 , BigInteger actualResult) {
-        BigInteger computedResult = wc1Karat_mult.intMult(int1,int2);
+        BigInteger computedResult = karat_mult.intMult(int1,int2);
         assertThat(computedResult).isEqualByComparingTo(actualResult);
     }
 }

@@ -1,5 +1,7 @@
-package com.ak.algo;
+package com.ak.algo.intmult.wc;
 
+
+import com.ak.algo.intmult.impl.wc.RecIntMult_1_WC3;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,15 +15,13 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class RecIntMult_1_WC4Test {
+class RecIntMult_1_WC3Test {
 
-    private final RecIntMult_1_WC4 wc4_mult = new RecIntMult_1_WC4();
+    private final RecIntMult_1_WC3 wc3_mult = new RecIntMult_1_WC3();
 
     @BeforeEach
     void setUp() {
     }
-
-
 
     @AfterEach
     void tearDown() {
@@ -31,6 +31,7 @@ class RecIntMult_1_WC4Test {
                 arguments(new BigInteger("156"), new BigInteger("9999"),new BigInteger("1559844")),
                 arguments(new BigInteger("56"), new BigInteger("9999"),new BigInteger("559944")),
                 arguments(new BigInteger("134"), new BigInteger("5678"),new BigInteger("760852")),
+                arguments(new BigInteger("1234"), new BigInteger("5678"),new BigInteger("7006652")),
                 arguments(new BigInteger("156"), new BigInteger("10000"),new BigInteger("1560000"))
         );
     }
@@ -38,8 +39,7 @@ class RecIntMult_1_WC4Test {
     @ParameterizedTest
     @MethodSource("nbrToMultiply")
     void intMult( BigInteger int1, BigInteger int2 , BigInteger actualResult) {
-        BigInteger computedResult = wc4_mult.intMult(int1,int2);
+        BigInteger computedResult = wc3_mult.intMult(int1,int2);
         assertThat(computedResult).isEqualByComparingTo(actualResult);
-
     }
 }
