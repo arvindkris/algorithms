@@ -1,8 +1,8 @@
-package com.test.algo;
+package com.ak.algo;
 
 import java.math.BigInteger;
 
-public class RecIntMult_1_WCFinal {
+public class RecIntMult_1_WC1KaratFinal {
 
 
     public BigInteger intMult(BigInteger int1, BigInteger int2) {
@@ -29,20 +29,33 @@ public class RecIntMult_1_WCFinal {
             BigInteger ac_a0b0 = intMult(int1_a[0],int1_b[0]);
             //System.out.println("ac_a0b0\t" + ac_a0b0);
 
-            BigInteger ad_a0b1 = intMult(int1_a[0],int1_b[1]);
+            // immplement (a + b) (c + d)
+            // a + b
+            BigInteger aAddB = int1_a[0].add(int1_a[1]);
+            System.out.println("aAddB\t" + aAddB);
+            // c + d
+            BigInteger cAddD = int1_b[0].add(int1_b[1]);
+            System.out.println("cAddD\t" + cAddD);
+
+            BigInteger aAddB_cAddD = intMult(int1_a[0].add(int1_a[1]), int1_b[0].add(int1_b[1]));
+            System.out.println("aAddB_cAddD\t" + aAddB_cAddD);
+
+
+            BigInteger bd_a1b1 = intMult(int1_a[1],int1_b[1]);
+           //System.out.println("bd_a1b1\t" + bd_a1b1);
+
+
+
+            BigInteger ad_bc = aAddB_cAddD.subtract(ac_a0b0.add(bd_a1b1));
             //System.out.println("ad_a0b1\t" + ad_a0b1);
 
-            BigInteger bc_a1b0 = intMult(int1_a[1],int1_b[0]);
-            //System.out.println("bc_a1b0\t" + bc_a1b0);
 
-           BigInteger bd_a1b1 = intMult(int1_a[1],int1_b[1]);
-           //System.out.println("bd_a1b1\t" + bd_a1b1);
 
 
             System.out.println("nValue before compute\t" + nValue );
 
             BigInteger computedVal_step0 = ac_a0b0.multiply(BigInteger.TEN.pow(2* nValue)); // you had n/2 of larger value so multiple by 2 to get n back
-            BigInteger computedVal_step1 = (ad_a0b1.add(bc_a1b0)).multiply(BigInteger.TEN.pow( nValue)); // nValue is already n/2 so use as is.
+            BigInteger computedVal_step1 = ad_bc.multiply(BigInteger.TEN.pow( nValue)); // nValue is already n/2 so use as is.
             BigInteger computedVal_step2 = bd_a1b1;
 
             System.out.println("computedVal_step0" + computedVal_step0);

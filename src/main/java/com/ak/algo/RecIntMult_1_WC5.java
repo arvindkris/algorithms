@@ -1,8 +1,8 @@
-package com.test.algo;
+package com.ak.algo;
 
 import java.math.BigInteger;
 
-public class RecIntMult_1_WC4 {
+public class RecIntMult_1_WC5 {
 
 
     public BigInteger intMult(BigInteger int1, BigInteger int2) {
@@ -12,12 +12,11 @@ public class RecIntMult_1_WC4 {
 
         int nValue = splitValue(int1_digitCount,int2_digitCount);
 
-        int exponent = calculateExponent(int1_digitCount,int2_digitCount);
+
 
         System.out.println("int1_digitCount\t" + int1_digitCount);
         System.out.println("int2_digitCount\t" + int2_digitCount);
         System.out.println("split Value\t" + nValue );
-        System.out.println("Exponent\t" + exponent );
 
         if ((int1_digitCount <= 1) || (int2_digitCount <= 1))  {
             System.out.println("either number has one digit" + int1 + "\t" + int2 );
@@ -42,8 +41,11 @@ public class RecIntMult_1_WC4 {
            BigInteger bd_a1b1 = intMult(int1_a[1],int1_b[1]);
            System.out.println("bd_a1b1\t" + bd_a1b1);
 
-            BigInteger computedVal_step0 = ac_a0b0.multiply(BigInteger.TEN.pow(exponent));
-            BigInteger computedVal_step1 = (ad_a0b1.add(bc_a1b0)).multiply(BigInteger.TEN.pow( (exponent/2)+ (exponent%2) ));
+
+            System.out.println("nValue before compute\t" + nValue );
+
+            BigInteger computedVal_step0 = ac_a0b0.multiply(BigInteger.TEN.pow(2* nValue));
+            BigInteger computedVal_step1 = (ad_a0b1.add(bc_a1b0)).multiply(BigInteger.TEN.pow( nValue)); // how to calculate exponent
             BigInteger computedVal_step2 = bd_a1b1;
 
             System.out.println("computedVal_step0" + computedVal_step0);
@@ -63,8 +65,8 @@ public class RecIntMult_1_WC4 {
 
     private int splitValue( int int1_digitCount, int int2_digitCount ) {
         int split_val = 0;
-        if(int1_digitCount > int2_digitCount) split_val = int1_digitCount/2 + int1_digitCount%2;
-        else split_val = int2_digitCount/2 + int2_digitCount%2;
+        if(int1_digitCount > int2_digitCount) split_val = int1_digitCount/2;
+        else split_val = int2_digitCount/2;
         return split_val;
     }
 

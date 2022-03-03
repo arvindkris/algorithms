@@ -1,4 +1,4 @@
-package com.test.algo;
+package com.ak.algo;
 
 import java.math.BigInteger;
 

@@ -1,4 +1,4 @@
-package com.test.algo;
+package com.ak.algo;
 
 public class RecIntMult {
 

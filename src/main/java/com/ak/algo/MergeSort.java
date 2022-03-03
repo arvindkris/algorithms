@@ -1,6 +1,5 @@
-package com.test.algo;
+package com.ak.algo;
 
-import java.net.SocketOption;
 import java.util.Arrays;
 
 public class MergeSort {
