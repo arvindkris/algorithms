@@ -1,0 +1,26 @@
+
+M	java:S106"9Replace this use of System.out or System.err by a logger.(¦°à{
+S	java:S106 "9Replace this use of System.out or System.err by a logger.(—¡•‚ûÿÿÿÿ
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(Î÷ó»üÿÿÿÿ
+N	java:S106,"9Replace this use of System.out or System.err by a logger.(®ó˜¼
+S	java:S106-"9Replace this use of System.out or System.err by a logger.(Ðç·Åÿÿÿÿÿ
+N	java:S106."9Replace this use of System.out or System.err by a logger.(ÑñÛÅ
+S	java:S1065"9Replace this use of System.out or System.err by a logger.(ºÈºßþÿÿÿÿ
+:
+java:S21299"$Remove this "BigInteger" constructor(þ“˜
+N	java:S106I"9Replace this use of System.out or System.err by a logger.(ÜðÞÑ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áÉð‡
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò×¥üÿÿÿÿ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È£‡å
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ž²’æÿÿÿÿÿ
+f	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤È˜Ï
+k	java:S117$"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñè°…ýÿÿÿÿ
+k	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Àï´ûÿÿÿÿ
+f	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒ–â¿
+k	java:S117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£À•àüÿÿÿÿ
+k	java:S117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(žÕìóøÿÿÿÿ
+k	java:S117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëè²¯üÿÿÿÿ
+k	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò»Ò—úÿÿÿÿ
+v
+java:S1488>"`Immediately return this expression instead of assigning it to the temporary variable "valArray".(§íÚ£
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¨ƒÞý

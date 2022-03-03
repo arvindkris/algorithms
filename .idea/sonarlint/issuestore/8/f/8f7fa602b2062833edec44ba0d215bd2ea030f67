@@ -1,0 +1,27 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(šÓ¤ðüÿÿÿÿ
+M	java:S106"9Replace this use of System.out or System.err by a logger.(ÙƒÉe
+M	java:S106"9Replace this use of System.out or System.err by a logger.(ˆÅ¸
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ý²Š†ÿÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ëçƒ¯þÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ë¤ÃÑøÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(‰¥–×
+S	java:S106#"9Replace this use of System.out or System.err by a logger.(›Ã‘åøÿÿÿÿ
+N	java:S106+"9Replace this use of System.out or System.err by a logger.(êŠÞ¾
+S	java:S1069"9Replace this use of System.out or System.err by a logger.(šÓ¤ðüÿÿÿÿ
+M	java:S106:"9Replace this use of System.out or System.err by a logger.(ÙƒÉe
+Q	java:S125="<This block of commented-out lines of code should be removed.(û³‰Æ
+V	java:S125B"<This block of commented-out lines of code should be removed.(Ö³©Êþÿÿÿÿ
+M	java:S106G"9Replace this use of System.out or System.err by a logger.(ˆÅ¸
+S	java:S106H"9Replace this use of System.out or System.err by a logger.(ý²Š†ÿÿÿÿÿ
+S	java:S106I"9Replace this use of System.out or System.err by a logger.(Ëçƒ¯þÿÿÿÿ
+S	java:S106M"9Replace this use of System.out or System.err by a logger.(¸í°ûÿÿÿÿ
+S	java:S106Q"9Replace this use of System.out or System.err by a logger.(›Ã‘åøÿÿÿÿ
+S	java:S106b"9Replace this use of System.out or System.err by a logger.(€©¯ñúÿÿÿÿ
+Q	java:S125["<This block of commented-out lines of code should be removed.(£œ¬–
+Q	java:S125c"<This block of commented-out lines of code should be removed.(íô’
+]	java:S125f"<This block of commented-out lines of code should be removed.(×¨ñÎýÿÿÿÿ8™¼§Úá/
+g
+java:S1192"LDefine a constant instead of duplicating this literal "first Num\t" 3 times.(šÓ¤ðüÿÿÿÿ
+i
+java:S1192"NDefine a constant instead of duplicating this literal "second half\t" 4 times.(šÓ¤ðüÿÿÿÿ
