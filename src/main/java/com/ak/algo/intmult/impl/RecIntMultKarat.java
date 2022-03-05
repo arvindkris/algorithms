@@ -1,12 +1,20 @@
 package com.ak.algo.intmult.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
+
 import java.math.BigInteger;
 
 import static com.ak.algo.intmult.util.RecIntMultUtility.*;
 
 public class RecIntMultKarat {
+    private static final Logger logger
+            = LoggerFactory.getLogger(RecIntMultKarat.class);
 
-
+    public RecIntMultKarat() {
+        MDC.put("module","intmult");
+    }
     public BigInteger intMult(BigInteger int1, BigInteger int2) {
         int int1_digitCount = getNbrOfDigits(int1);
         int int2_digitCount = getNbrOfDigits(int2);
@@ -33,7 +41,7 @@ public class RecIntMultKarat {
 
             BigInteger finalComputedVal = computedVal_step0.add(computedVal_step1).add(computedVal_step2);
 
-            System.out.println("Final Computed Value\t" + finalComputedVal);
+            logger.info("Final Computed Value\t" + finalComputedVal);
             return finalComputedVal;
 
         }
